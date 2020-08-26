@@ -1,1 +1,2068 @@
-Welcome...
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Image Translate, Documents to Text</title>
+<meta name="description" content="Cloud Scanner!! Convert image to text, and Translate it. It also allows you to convert PDF, Image, DOC, PPT file to plain text.">
+<meta name="keywords" content="image to text, image to translate, ocr, cloud ocr, online ocr, cloud scanner, jpg to text, jpg to txt, png to txt, pdf to txt, doc to txt, ppt to txt, cloud converter, google drive converter">
+
+<meta property="og:title" content="Image Translate, Documents to Text"> 
+<meta property="og:description" content="Cloud Scanner!! Convert image to text, and Translate it. It also allows you to convert PDF, Image, DOC, PPT file to plain text.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://imagetotext.iblogbox.com/">
+<meta property="og:image" content="http://imagetotext.iblogbox.com/img/logo128.png">
+  
+<link rel="shortcut icon" href="./favicon.ico">
+<head>
+<style>
+body,table,td,span,select,input,textarea,button{
+	font-size:14px;
+	font-family: Arial, Helvetica, sans-serif, Verdana;
+}
+body{background:#E9EAED;}
+
+A:link    {color:#0860A8;text-decoration:none;}
+A:visited {color:#0860A8;text-decoration:none;}
+A:active  {color:#0860A8;text-decoration:underline;}
+A:hover  {color:#0860A8;text-decoration:underline;}
+.divopt{
+	-webkit-box-shadow: 0 0 10px #999;
+	-moz-box-shadow: 0 0 10px #999;
+	box-shadow: 0 0 10px #999;
+}
+.menulink{font-size:15px;}
+.input{width:630px;}
+.small{font-size:13px;}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="js/common.js" type="text/javascript"></script>
+<script src="http://iblogbox.github.io/js/paint/paste.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+<script src="http://iblogbox.github.io/js/dialogs/jquery.Jcrop.js" type="text/javascript"></script>
+<link rel="stylesheet" href="http://iblogbox.github.io/js/dialogs/jquery-ui-1.8.custom.css" type="text/css">
+<link rel="stylesheet" href="http://iblogbox.github.io/js/dialogs/jquery.Jcrop.css" type="text/css">
+
+<script>
+var gadb=false;
+var henc=html_entity_encode;
+window.URL=(window.URL || window.webkitURL);
+var g_expires=1000*60*60*6;
+function init(){
+	window.onunload=function(){
+		proc_saveopt();
+	}	
+	var sw=_getid('attachment').offsetWidth;
+	for(var i = 1; i <= 7; i++){
+		var a=_getid("log"+i);
+		if(a){
+			a.style.width=sw+'px';
+		}
+	}
+}
+</script>
+</head>
+<body onload="init()">
+
+<table align=center>
+<tr><td height=10>
+</table>
+
+<table id="maintable" width=810 border=0 align=center class="divopt" style="background-color:white;padding:6px 8px;border: 0px solid #2E79DB;">
+<tr><td>
+
+<table width=100%><tr>
+<td><img src="img/logo65.png" width=65>
+<td>
+<td><a id="toptitle" href="./" title="Go Home" style="color:#1667A0"><span style="font-size:27px;font-family:Verdana, Arial;white-space:nowrap;">Image Translate, Documents to Text</span></a>
+<div style="margin-left:2px">
+Convert image to text (OCR), and Translate it. It also allows you to convert PDF, Image, DOC, PPT file to plain text.
+You can select a file from Google Drive, Local Computer and Clipboard Image.
+<!--<br>Supports Chrome, IE10+, Firefox, Safari...//-->
+<br>*Documents to Text, Supported Formats: pdf, jpg, jpeg, png, gif, bmp, doc, docx, ppt, pptx, odp, html, htm, odt
+<br>*Select a image from the Clipboard: Press the Ctrl+V, AppleKey+V after copying the image.  
+<br>*Screen Capture to Clipboard<br>
+Windows, Linux: Press PrtScn Button<br>
+Mac: Control + Command + Shift + 3 (fullscreen), Control + Command + Shift + 4 (selection)
+<div id="div_clipboard" style="display:none">
+<font color=green>Firefox, IE11+, Edge browser: Give a focus to the input box, and Press the Ctrl+V, AppleKey+V.</font><br>
+<input type=text style="width:330px;margin-top:4px" id="demopaste" onpaste="return false" onkeypress="return false" placeholder="Paste from clipboard for Firefox, IE11+, Edge." title="Paste from clipboard for Firefox, IE11+, Edge.">
+</div>
+</div>
+</table>
+
+<center>
+<script type="text/javascript">
+    google_ad_client = "ca-pub-1113541014872557";
+    google_ad_slot = "4836985102";
+    google_ad_width = 728;
+    google_ad_height = 90;
+</script>
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js" onerror="gadb=true;">
+</script>
+</center>
+
+<tr><td>
+<style>
+#holder1, #holder2 { border: 5px dashed #ccc; width: 98%; height: 60px; margin: 5px auto;}
+#holder1.hover { border: 5px dashed #333; }
+#holder2.hover { border: 5px dashed #333; }
+.uploaded{color:green;}
+.error{color:#8A0808;}
+.welcome{color:#45616D;}
+.log{width:100%;height:300px;}
+.big1{font-size:20px;}
+.big2{font-size:15px;color:green;font-weight:bold}/*8A4B08*/
+#gd_progress{width:650px;white-space:nowrap;overflow:hidden;border:0px solid red;}
+#gd_progress2{width:610px;white-space:nowrap;overflow:hidden;border:0px solid red;}
+#adownlink{font-size:16px;}
+.desc1{color:green}
+.opt{border:2px dashed #0860A8;padding:2px}
+</style>
+	<table width=100%>					
+		<tr><td>			
+			<button type="button" id="btn_cleartemp" onclick="f_clear_temp()">Clear all temp files in the trash folder</button> (Temporary files created by this app for converting task.)
+			<div id="foldername" style="width:600px;white-space:nowrap;overflow:hidden;border:0px solid red;font-size:15px;margin-top:2px;margin-bottom:2px;"></div>
+
+		<tr><td class=big2>Add a image, document file. Select from Google Drive, Local Computer and Clipboard.
+		<tr><td>			
+			<button type="button" id='btn_open' onclick="gd_open_picker()" title="Select a image, document file from Google Drive" style=""><img src="http://iblogbox.github.io/js/gdrive/product16.png" width=16 align="absmiddle"> Select a image, document file from Google Drive</button>
+			<button type="button" onclick="attach_delete()" style="display:none">Remove</button>
+			<button type="button" onclick="attach_clear()">Clear</button> &nbsp;<span id="desc2"></span>
+		<tr><td>
+			<div id="holder2"><table width=100% height=100%><tr><td align=center valign=middle><font style="font-size:19px;">Drop a image, document file here.</font></table></div>
+			<div id="dfile2" style="display:inline"></div>
+			<div id="dfile2msg" style="width:700px;white-space:nowrap;overflow:hidden;border:0px solid red"></div>
+			<script>document.getElementById("dfile2").innerHTML='<input type="file" id="fileload2" style="width:306px" name="files[]">';</script>				
+			
+		<tr><td>			
+			<div id="downlink" style="margin-bottom:2px"><span id=spancount></span></div>
+			<select id='attachment' style="width:100%;height:100px" multiple=true onchange="attachment_onchange(this)" onclick="attachment_onchange(this)"></select>
+			
+			<div id="desc" style="margin-top:2px;color:green;width:600px;white-space:nowrap;overflow:hidden;border:0px solid red"></div>
+			<!--<font style="font-size:13px">*Unknown Size: Google Document Formats.</font> &nbsp;//--><span id="spandown"></span>
+
+		<tr><td class=big2>Save to Drive (Target Folder to Save)
+		<tr><td>
+			<button type="button" id="btn_gdopen" onclick="gd_open_picker(2)"><img src="images/product16.png" width=18 align="absmiddle"> Select Target Folder from Google Drive</button>
+			<button type="button" id="btn_root" onclick="proc_setfolder('','');" title="Reset to Root Folder">Root Folder</button>
+			<div id="foldername2" style="width:600px;white-space:nowrap;overflow:hidden;border:0px solid red;font-size:15px;margin-top:2px;margin-bottom:2px;">Root Folder</div>
+
+		<tr><td align=center>
+			<button onclick="proc_show('optcontainer')" style="display:none">Options, Supported formats</button>		
+
+<script>
+function lang_onchange(){
+	setstorage("c_trans_sl",_getid('sourcelang').value);
+	setstorage("c_trans_tl",_getid('targetlang').value);
+}
+function init_trans(){
+	var sl=getstorage("c_trans_sl",sl);
+	var tl=getstorage("c_trans_tl",tl);
+	if(!tl){
+		tl=window.navigator.language || window.navigator.userLanguage || "en";
+	}
+	if(!check_lang(sl)) sl="auto";
+	if(!check_lang(tl)) tl="en";
+	if(sl && tl){
+		_getid("sourcelang").value=sl;
+		_getid("targetlang").value=tl;
+	}
+	var s=getstorage("c_opensame");
+	if(s==1) _getid('c_opensame').checked=true;
+	//var s=getstorage('c_ocrlang');
+	//if(s) _getid('ocrlang').value=s;
+}
+var g_paste_createImage;
+function init_clipboard(){
+	if(!window.addEventListener)return;
+//chrome
+function pasteHandler(e){
+	if(e.clipboardData) {
+		var items = e.clipboardData.items;
+		if (items){
+			for (var i = 0; i < items.length; i++) {
+				if (items[i].type.indexOf("image") !== -1) {
+					var blob = items[i].getAsFile();
+					var reader = new FileReader();
+				    reader.onload = function(e) {
+						paste_createImage(e.target.result, blob.size);
+				    }
+					reader.readAsDataURL(blob);
+					return;
+				}
+			}
+			show_message('No image found in the clipboard.');
+		}
+	}
+}
+function paste_createImage(source, size){
+	if(source.length>cp_maxsize*1024*1024){
+		//console.log(source.length);
+		alert('The image size is too large to load.');
+		return;
+	}
+	var a=_getid('previewimg');
+	a.src=source;
+	a.style.display='';
+	f_switchlog(5,_getid('alog5'));
+
+	attach_clear();
+	var d={};
+	d.id=(new Date()).getTime();
+	d.clipboard=true;
+	d.resp={};
+	d.resp.title='Image from Clipboard.png';		
+	d.resp.fileSize=size;
+	d.resp.mimeType=getmimetype(d.resp.title);
+	f_addtolist(d);
+	gd_files.push(d);		
+	gd_count();		
+	//if(document.body) document.body.scrollTop=document.body.scrollHeight;
+	//if(document.documentElement) document.documentElement.scrollTop=document.documentElement.scrollHeight;
+}
+g_paste_createImage=paste_createImage;
+	var isChromium = window.chrome,
+    isOpera = window.navigator.userAgent.indexOf("OPR") > -1,
+    isIEedge = window.navigator.userAgent.indexOf("Edge") > -1;
+	if(isChromium !== null && isChromium !== undefined && isOpera == false && isIEedge == false){
+		window.addEventListener("paste", pasteHandler);
+	}else{
+		cp_kind=2;
+		_getid('div_clipboard').style.display='';
+		$('#demopaste').pastableTextarea();
+	    $('#demopaste').on('pasteImage', function(ev, data){	 
+			var blob=b64toBlob(data.dataURL.substr(data.dataURL.indexOf(",")+1,data.dataURL.length), 'image/png');	
+			paste_createImage(data.dataURL, blob.size);
+			_getid('demopaste').value='';
+		}).on('pasteText', function(ev, data){
+			_getid('demopaste').value='';
+		});
+	}
+}
+</script>
+
+<table><tr>
+<td><button onclick="attach_convertall()" class="big1">Convert to Text & Translate</button>
+<td width=3><td align=left>
+
+<table>
+<tr><td colspan=3>
+OCR Recognition Language <select id="ocrlang" onchange="setstorage('c_ocrlang',this.value)"><option value="" selected>Auto Detect</option>
+<script>
+	for(i = 0; i < supportlanguage.length; i++){
+		document.write("<option value='"+supportlanguage[i]+"'>"+supportlanguage2[i]+"</option>");
+	}
+</script>
+<tr><td>Translate Source <select id="sourcelang" onchange="lang_onchange(this)"><option value="auto">Auto Detect</option>
+<script>
+	for(i = 0; i < supportlanguage.length; i++){
+		document.write("<option value='"+supportlanguage[i]+"'>"+supportlanguage2[i]+"</option>");
+	}
+</script>
+</select>
+<td>&nbsp;-->&nbsp;
+<td><select id="targetlang" onchange="lang_onchange(this)">
+<script>
+	for(i = 0; i < supportlanguage.length; i++){
+		document.write("<option value='"+supportlanguage[i]+"'>"+supportlanguage2[i]+"</option>");
+	}
+</script>
+</select>
+</table>
+<label><input type=checkbox id="c_opensame" onclick="c_opensame_onclick(this)"> Open in the previous window</label>
+
+</table>
+
+		<tr><td>
+			<form id="optcontainer" name="optcontainer" class=opt style="display:none" onsubmit="return false">
+				<table>
+				<tr><td>
+				<tr><td>*Prefered Conversion Formats for Google Documents
+				<tr><td>
+					<div id='psformats'></div>
+				</table>
+			</form>
+
+		<tr><td>
+			<div id="logtab">			
+				<a href="#" id="alog1" onclick="return f_switchlog(1,this)" style="font-weight:bold">Process Log</a>
+				<!--&nbsp;&nbsp;<a href="#" id="alog3" onclick="return f_switchlog(3,this)">Error Log</a>//-->
+				&nbsp;&nbsp;<a href="#" id="alog4" onclick="return f_switchlog(4,this)">Converted Text from the File</a>
+				&nbsp;&nbsp;<a href="#" id="alog5" onclick="return f_switchlog(5,this)">Image from the Clipboard</a>
+				&nbsp;&nbsp;<a href="#" onclick="proc_crop();return false" title="Crop and select the portion of the image">Crop Image</a>
+			</div>
+		<tr><td>
+			<div id="downlink2" style="margin-bottom:2px"></div>
+			<div id="log1" class="log" style="overflow-y:scroll;"></div>
+			<div id="log3" class="log" style="overflow-y:scroll;display:none"></div>
+			<textarea id="log4" class="log" style="display:none;resize:none"></textarea>
+			<div id="log5" class="log" style="overflow:auto;display:none">
+				<img id="previewimg" ondragstart="return false;" style="display:none">
+			</div>
+
+				</table>
+
+<tr><td>
+<tr><td align=center>
+<script type="text/javascript">
+    google_ad_client = "ca-pub-1113541014872557";
+    google_ad_slot = "4836985102";
+    google_ad_width = 728;
+    google_ad_height = 90;
+</script>
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</table>
+
+
+<style>
+a.bottomlink:link{text-decoration:underline;}
+a.bottomlink:visited{text-decoration:underline;}
+a.bottomlink:active{text-decoration:underline;}
+a.bottomlink:hover{text-decoration:underline;}
+</style>
+
+<table id="bottomtable" align=center>
+<tr><td height=7>
+<tr><td align=center><span id="bottomtitle">ⓒ Image Translate, Documents to Text, 2020</span>
+	</table><br>
+
+<style>
+.gd_div{background-color:#FFFFE1;position:absolute;overflow:hidden;-webkit-box-shadow: 0 0 25px #999;-moz-box-shadow: 0 0 25px #999;box-shadow: 0 0 25px #999;}
+</style>
+<div id="layer_message" class="gd_div" style="z-index:10001;display:none;"></div>
+<div id="gd_window" class="gd_div" style="z-index:10000001;display:none;"></div>
+<div id="gd_btn_login" class="gd_div" style="z-index:10000000;display:none;">
+<table>
+<tr><td align=center><button onclick="gd_login_manual()" style="font-size:20px"><img src="http://iblogbox.github.io/js/gdrive/product20.png" align="absmiddle"> Login & Authorize</button> <button onclick="gd_login_close()" style="font-size:20px">Close</button>
+<tr><td>To use this app, Please login to the Google Drive and authorize this app or website.
+<br>(Note: If your browser block or disable the third-party cookies, this login does not work correctly.)
+</table>
+</div>
+<script>
+  
+var CLIENT_ID = '999816377470-k9v22d2v0b1fj2tsel7vm8u200pm7s55.apps.googleusercontent.com';
+var gd_developerKey='AIzaSyDShprZsmbdQQpG6nO6xU0txBLETYBqx88';
+var SCOPES = [
+	'https://www.googleapis.com/auth/drive.install',
+	'https://www.googleapis.com/auth/drive.file'
+];
+var gd_mimetype="";
+var gd_export_extension=[];
+var gd_state='';
+
+var gd_picker,gd_picker2,gd_loaded,gd_pickerloaded,gd_lastprogress,gd_issupported,gd_isdownloading,gd_load_timer,gd_bloburl,gd_state2;
+var gd_loginexp=0;
+var gd_callback;
+var ismsie=false;
+if(navigator.appName!="Netscape"){
+	if(navigator.userAgent.indexOf("MSIE")>=0) ismsie=true;
+}
+var issafari=false;
+var ua = navigator.userAgent.toLowerCase(); 
+if (ua.indexOf('safari') != -1 && ua.indexOf('chrome') <0) issafari=true;
+
+function gd_btn_login2(e,callback){
+	function go(a){
+		if(a && a.style.display==''){
+			var x=getScrollLeft()+((getWindowWidth()-a.clientWidth) / 2);
+			var y=getScrollTop()+((getWindowHeight()-a.clientHeight) / 2);
+			a.style["border"]="1px solid #000000";
+			a.style["padding"]="10px";
+			a.style.left=x+"px";
+			a.style.top=y+"px";
+		}
+	}
+	go(_getid("gd_btn_login"));
+	go(_getid("gd_window"));	
+	setTimeout(function(){
+		go(_getid("gd_btn_login"));
+		go(_getid("gd_window"));	
+		if(callback)callback();
+	},10);
+}
+function gd_btn_login(isshow){
+	var a=_getid("gd_btn_login");
+	if(isshow){
+		a.style.display='';
+		gd_btn_login2();
+	}else{
+		a.style.display='none';
+	}
+}
+function gd_login_close(){
+	gd_btn_login(false);
+  	gd_state='';
+}
+function gd_login_manual(){
+	var p={'client_id': CLIENT_ID, 'scope': SCOPES.join(' '), 'immediate': false};
+	if(gd_userId){p['login_hint']=gd_userId;p['authuser']=-1;} 
+	gapi.auth.authorize(p, function (authResult){ 
+		if (authResult && !authResult.error){
+			gd_loginexp=(new Date()).getTime()+parseInt(authResult.expires_in*0.7*1000);
+			gd_btn_login(false);gd_info();
+			show_message("Login ok!!");
+			if(gd_callback) gd_callback(true);
+			else gd_open_state(true);
+		}else{
+			gd_btn_login(true);
+			show_message("Login failed!!");
+		}
+	});
+}
+function gd_login(callback,react){
+	if(gd_loginexp==0 || gd_loginexp<(new Date()).getTime()){
+	}else{
+		callback(true);
+		return;
+	}
+	var p={'client_id': CLIENT_ID, 'scope': SCOPES.join(' '), 'immediate': true};
+	if(gd_userId){p['login_hint']=gd_userId;p['authuser']=-1;}
+	gapi.auth.authorize(p, function (authResult){
+		if (authResult && !authResult.error){
+			gd_loginexp=(new Date()).getTime()+parseInt(authResult.expires_in*0.7*1000);
+			gd_btn_login(false);gd_info();
+			callback(true);
+		}else{
+			show_message("Login failed!!");
+			gd_btn_login(true);
+			callback(false);
+			if(react) gd_callback=callback;
+			else gd_callback=null;
+		}
+	});
+}
+function gd_checklogin(callback){
+	gd_login(function(result){
+		if(result)callback();
+	},true);
+}
+
+function gd_loadpicker() {		
+	gapi.load('picker',{'callback': function(){
+			gd_pickerloaded=true;
+		}
+	});	
+}
+
+function gd_createpicker(kind) {
+	function gd_pickercallback(data) {
+		if (data.action == google.picker.Action.PICKED) {
+			if(data.docs && data.docs.length>0 && data.docs[0].id){
+				if(!kind){
+					gd_loadfiles(data.docs);
+				}else if(kind==2 || kind==3){
+					if(data.docs[0].type!="folder"){
+						alert("It's not a folder.");
+						return;
+					}
+					var id=data.docs[0].id;
+					var name=data.docs[0].name;
+					proc_setfolder(id, name, kind);
+				}
+			}
+		}
+	}
+	var access_token=gapi.auth.getToken().access_token;
+	if(!access_token){
+		alert('Error!! No access token.');
+		return;
+	}
+	if(!kind){
+	 if(!gd_picker){
+	  var view2 = new google.picker.DocsView(google.picker.ViewId.DOCS);
+	  if(gd_mimetype) view2.setMimeTypes(gd_mimetype);
+	  view2.setMode(google.picker.DocsViewMode.LIST);
+
+		var view4 = new google.picker.DocsView();
+		view4.setIncludeFolders(true);
+		view4.setParent("root");
+		view4.setMimeTypes(gd_mimetype);
+		view4.setMode(google.picker.DocsViewMode.LIST);
+		var view5 = new google.picker.View(google.picker.ViewId.RECENTLY_PICKED);
+
+      gd_picker = new google.picker.PickerBuilder()
+		  //.enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+		  .setLocale("en")
+		  .setAppId(CLIENT_ID.split("-")[0]) //scope
+          .setOAuthToken(access_token)
+		  .setTitle("Select a file")
+          .addView(view2)
+		  .addView(view4)
+		  .addView(view5)
+          .addView(new google.picker.DocsUploadView())
+          .setDeveloperKey(gd_developerKey)
+          .setCallback(gd_pickercallback)
+          .build();
+	 }
+	 gd_picker.setVisible(true);
+	}else if(kind==2 || kind==3){
+	  if(!gd_picker2){
+		var docsView = new google.picker.DocsView()
+          .setIncludeFolders(true) 
+		  .setParent("root")
+          .setMimeTypes('application/vnd.google-apps.folder')
+		  .setMode(google.picker.DocsViewMode.LIST)
+          .setSelectFolderEnabled(true);
+		var view5 = new google.picker.View(google.picker.ViewId.RECENTLY_PICKED);
+
+        gd_picker2 = new google.picker.PickerBuilder()
+		  .setLocale("en") 
+		  .setAppId(CLIENT_ID.split("-")[0]) //scope
+          .setOAuthToken(access_token)
+		  .setDeveloperKey(gd_developerKey)
+		  .setTitle("Select Target Folder")
+          .addView(docsView)
+		  .addView(view5)
+          .setCallback(gd_pickercallback)
+          .build();
+	  }
+	  gd_picker2.setVisible(true);
+	}
+}
+
+function gd_count(){
+	var a=_getid('spancount');
+	if(a && gd_files) a.innerHTML="("+gd_files.length+" Added)";
+}
+
+var gd_files=[];
+var gd_files_total;
+function gd_loadfiles(docs,isstart){
+	if(gd_isdownloading){
+		alert("It's working... Please try again in a few minutes. or Cancel the current job.");
+		return;
+	}
+	function end(){
+		gd_isdownloading=false;
+		clearTimeout(messagetimer);
+		hide_message();
+		var a=_getid("downlink");
+		if(a.innerHTML && a.innerHTML.indexOf("adownlink")<0){
+			_getid("downlink").innerHTML="<span id=spancount></span>";
+		}		
+	}	
+	var canceled=false;
+	_getid("downlink").innerHTML="<table><tr><td><img src='images/wait.gif' align='absmiddle'><td><a href='#' id='gd_cancel'>Cancel</a><td><div id='gd_progress'>Getting file information...</div></table>";	
+	_getid('gd_cancel').onclick=function(){
+		canceled=true;
+		return false;
+	}
+	gd_isdownloading=true;
+	if(!docs){
+		end();return;
+	}
+
+	var files=[];
+	for(var i = 0; i <= docs.length-1; i++){
+		if(!docs[i].id)continue;
+		var d={};
+		d.id=docs[i].id;
+		d.name=docs[i].name;
+		files.push(d);
+	}
+	
+	function complete(){
+		attach_clear();
+		var d,s;
+		for(var i = 0; i <= files.length-1; i++){
+			d=files[i];
+			if(!d.resp || !d.resp.title)continue;
+			if(d.resp.mimeType=='application/vnd.google-apps.folder')continue;
+			f_addtolist(files[i]);
+			gd_files.push(files[i]);
+			break;
+		}		
+		gd_count();	
+	}
+	function get(idx){
+		if(idx>files.length-1 || canceled){
+			end();
+			complete();
+			return;
+		}
+		var fileId=files[idx].id;
+		var a=_getid("gd_progress");
+		if(a) a.innerHTML='Getting file info... ('+(idx+1)+'/'+files.length+')';
+
+			var request = gapi.client.drive.files.get({
+				'fileId': fileId
+			});
+			request.execute(function(resp){
+				if(isstart && resp.mimeType=='application/vnd.google-apps.folder'){
+					end();
+					var s=resp.title || 'No Name';
+					proc_setfolder(resp.id, s);
+					return;
+				}
+				//if(isstart) _getid("sel1").style.color="green";
+				if(resp.error){
+					var s='Error. ';
+					if(files[idx].name) s+=files[idx].name+'  ';
+					if(resp.error.message) s+=resp.error.message+' ';
+					if(resp.error.code==401) s+='Login or Authorize Error.';					
+					proc_log('log1',s,'error');
+				}
+				files[idx].resp=resp;
+				idx++;
+				get(idx);
+			});
+	}
+
+	if(files.length==0){
+		end();return;
+	}
+	gapi.client.load('drive', 'v2', function(){
+		get(0);
+	});
+}
+
+function f_logincheck(){
+	f_clearlog();
+	var b=_getid("gd_progress2");
+	if(b) b.innerHTML='';
+	proc_log('log1','Login checking...','welcome');
+}
+
+var gdesc='Converter_Temporary (vqnDYQNKY0b/mlHw/N/N8w)';
+function retrieveAllFiles(query,maxResults,callback) {
+	if(!maxResults) maxResults=100;
+  var retrievePageOfFiles = function(request, result) {
+    request.execute(function(resp) {
+      result = result.concat(resp.items);
+      var nextPageToken = resp.nextPageToken;
+      if (nextPageToken) {
+        request = gapi.client.drive.files.list({
+          'q': query, 'pageToken': nextPageToken, 'maxResults':maxResults
+        });
+        retrievePageOfFiles(request, result);
+      } else {
+        callback(result);
+      }
+    });
+  }
+  var initialRequest = gapi.client.drive.files.list({
+		'q': query		
+       });
+  retrievePageOfFiles(initialRequest, []);
+}
+function isexpired(modifiedDate,now,expire){
+  try{
+    var issued = (new Date()).setISO8601(modifiedDate);
+    if(now-issued.getTime()>expire){
+      return true;
+    }else{
+      return false;
+    }
+  }catch(err){
+    return true;
+  }
+}
+function batchdelete(list, callback){
+	if(list.length==0){
+		if(callback) callback();
+		return;
+	}
+	/*var answer=confirm("batchdelete\n\nDo you want to continue?");
+	if(!answer){
+		if(callback) callback();
+		return;
+	}*/
+	var batch = gapi.client.newBatch();
+	for(var i = 0; i < list.length; i++){    
+		//if(i>1)break;
+		var request = gapi.client.drive.files['delete']({'fileId': list[i]});
+		batch.add(request);
+	}
+	batch.execute(function(result){
+		//console.log(result);
+		if(callback) callback(result);
+	});
+}
+
+function f_clear_temp(){
+	if(gd_isdownloading){
+		alert("Please try again in a few minutes. or Cancel the current job.");
+		return;
+	}	
+	var dtotal=50;
+	var answer=confirm("Delete all temporary files created by this app in the trash folder. ("+dtotal+" temporary files at a time)\n\nDo you want to continue?");
+	if(!answer)return;
+
+	function go(){
+		if(gd_isdownloading)return;
+		gd_isdownloading=true;
+		proc_log('log1','Find all temporary files in the trash folder...','welcome');
+		var query="properties has { key='temp' and value='"+gdesc+"' and visibility='PRIVATE' } and mimeType contains 'application/vnd.google-apps'";
+		retrieveAllFiles(query, dtotal, function(result){
+			//console.log(result);
+			var dellist=[];			
+			if (result && result.length > 0){				
+				for (var i=0; i<result.length; i++){
+					if(result[i].labels.trashed && result[i].description==gdesc && result[i].exportLinks){    
+						dellist.push(result[i].id);
+					}
+				}
+			} 
+			proc_log('log1','Found '+dellist.length+' temp files.','uploaded');
+			proc_log('log1','Delete all temporary files...','welcome');
+			batchdelete(dellist, function(){
+				gd_isdownloading=false;
+				proc_log('log1','Completed. '+dellist.length+' temp files have deleted.','welcome');
+			});
+		});
+	}
+	gd_login(function(result){
+		if(!result) return;
+		gapi.client.load('drive', 'v2', function() {
+			go();
+		});
+	});
+}
+
+function gd_useable(){
+	if(!gd_issupported){
+		alert("This browser does not support.");
+		return;
+	}
+	if(!gd_loaded || !gd_pickerloaded){
+		alert('Not loaded library. Please try again in a few minutes.');
+		return;
+	}
+	return true;
+}
+
+function attach_convertall(){
+	if(gadb){alert('Please disable the adblock for free use.');return;}	if(!gd_useable())return;	
+	if(gd_isdownloading){
+		alert("Please try again in a few minutes. or Cancel the current job.");
+		return;
+	}	
+	f_switchlog(1,_getid('alog1'));
+	f_logincheck();
+	gd_login(function(result){
+		if(!result) return;
+		//proc_log('log1','Login checked.','welcome');
+		attach_convertall2();
+	},true);
+}
+function attach_convertall2(){
+	iserror=false;
+	if(gd_isdownloading)return;
+	var files;
+	files=gd_files;
+	if(files.length==0){
+		alert('No selected file.');
+		return;
+	}
+	var accessToken = gapi.auth.getToken().access_token;
+	if(!accessToken){
+		alert('Error!! No access token.');
+		return;
+	}
+
+	//var targetfolderid1; //temp folder
+	var targetfolderid2=getstorage('gd_folder_id') || 'root'; //save folder
+	var c_savedrive=false;//_getid('c_savedrive').checked;
+	var ocrlang=_getid('ocrlang').value;
+  
+/*  function checkfolder1(callback){
+	f_get_temp(function(result){
+		if(result){
+			callback(result);
+		}else{
+			f_create_temp(function(result){
+				callback(result);
+			});
+		}
+	});
+  }
+  function checkfolder2(fileId,callback){
+	var request = gapi.client.drive.files.get({
+		'fileId': fileId
+	});
+	request.execute(function(resp){
+		callback(resp);
+	});
+  }*/
+
+  gd_isdownloading=true;  
+  gapi.client.load('drive', 'v2', function(){
+	  go();
+	/*proc_log('log1','Folder checking...','welcome');
+	checkfolder1(function(result){
+		if(result){
+			targetfolderid1=result.id;
+			if(!c_savedrive || !targetfolderid2){
+				go();
+				return;
+			}
+			checkfolder2(targetfolderid2,function(resp){
+				if(resp && resp.id){
+					go();
+				}else{
+					gd_isdownloading=false;
+					proc_log('log1','Target folder for save does not exist.','error');
+				}
+			});
+		}else{
+			gd_isdownloading=false;
+			proc_log('log1','Temp folder does not exists.','error');
+		}
+	});*/
+
+  });
+
+  function go(){	
+	var xhr= new XMLHttpRequest(); //upload
+	var xhr2= new XMLHttpRequest(); //download
+	g_canceled=false;
+
+	_getid("downlink2").innerHTML="<table><tr><td><a href='#' id='gd_cancelall' style='display:none' title='Cancel all tasks'>Cancel all</a>&nbsp;<td><a href='#' id='gd_cancel2' style='display:none' title='Cancel the current task'>Cancel</a>&nbsp;<td><div id='gd_progress2'></div></table>";		
+	proc_log('log1','Started...','welcome');
+
+	var c=_getid('gd_cancelall');
+	if(c){
+		//c.style.display='';
+		c.onclick=function(){
+			g_canceled=true;
+			var a=_getid('gd_cancel2');
+			if(a && a.onclick) a.onclick();
+			return false;
+		}
+	}
+
+	function _end(){
+		gd_isdownloading=false;
+		var c=_getid('gd_cancelall');if(c) c.style.display='none';
+		var c=_getid('gd_cancel2');if(c) c.style.display='none';
+		var s='Completed.';
+		if(iserror) s+=' but there are some errors. Check the red line on log.'; 
+		proc_log('log1',s,'welcome');
+	}
+	function get(idx){
+		gd_checklogin(function(){
+			accessToken=gapi.auth.getToken().access_token;
+			get2(idx);
+		});
+	}
+	function get2(idx){
+		var xcancel;
+		function _next(force){
+			if(!force && xcancel)return;
+			xhr.abort();xhr2.abort();
+			setTimeout(function(){         
+				idx++;
+				get(idx);
+             		},20);
+		}
+		function _progress(name,s,state,s2){
+			s='['+(idx+1)+'/'+files.length+'] '+s+' '+files[idx].resp.title;
+			proc_log(name,s,state,s2);
+		}
+		function _progress2(s){
+			var a=_getid("gd_progress2");
+			if(a) a.innerHTML=henc(s);
+		}
+
+		if(g_canceled || idx>files.length-1){
+			_end();
+			return;
+		}
+		
+		//files[idx].format='txt';
+		files[idx].canceled=false;
+		var c=_getid('gd_cancel2');
+		if(c){
+			c.style.display='';
+			c.onclick=function(){
+				xhr.abort(); 
+				xhr2.abort();
+				files[idx].canceled=true;
+				this.style.display='none';
+				this.onclick=function(){return false;}
+				_progress('log1','Canceled by user.','error');
+				_next(true);
+				return false;
+			}
+		}
+			function _delete(fileid){
+				var request = gapi.client.drive.files['delete']({
+					'fileId': fileid
+				});
+				request.execute(function(resp){
+				});
+			}
+
+			function _upcallback(result,nodel){
+				//console.log(result);
+				if(!result){
+					_next();
+					return;
+				}
+				if(result.error){
+					var s='Error. ';
+					if(result.error.message) s+=result.error.message+' ';
+					if(result.error.code==401){
+						s+='Login or Authorize Error.';
+                    }
+					_progress('log1',s,'error');
+				}else if(result.id){
+					var downloadurl,url;
+					for (x in result.exportLinks){	
+						url=result.exportLinks[x] || '';
+						match=url.match(/(exportFormat=|format=)(.*?)(&|$)/i);
+						if(match && match[2]){							
+							if(files[idx].format=='html(zip)' || files[idx].format=='odp' || files[idx].format=='ods'){
+								if(files[idx].format=='html(zip)'){
+									downloadurl=url.replace(/(exportFormat=|format=)(.*?)(&|$)/i,"$1zip$3");
+									result.fileExtension='zip';
+								}else{
+									downloadurl=url.replace(/(exportFormat=|format=)(.*?)(&|$)/i,"$1"+files[idx].format+"$3");
+									result.fileExtension=files[idx].format;
+								}
+								result.title2=result.title+'.'+result.fileExtension;
+								result.mimeType='';
+								break;
+							}else if(match[2].toLowerCase().indexOf(files[idx].format)>=0 || match[2].toLowerCase().indexOf('csv')>=0){
+								downloadurl=url;
+								result.fileExtension=files[idx].format;
+								result.title2=result.title+'.'+result.fileExtension;
+								result.mimeType='';
+								break;
+							}
+						}	
+					}
+					if(downloadurl || result.exportLinks){
+						var s2='';
+						if(downloadurl){
+							var s='['+(idx+1)+'/'+files.length+'] Converted.';
+							//s2='<a href="'+downloadurl+'" target="_blank" download="">Download ('+files[idx].format+')</a>';
+							s2='<button onclick="proc_trans(\''+downloadurl+'\')">Translate</button>';
+							s2+=' &nbsp;<a href="#" onclick="proc_copyto(\''+result.id+'\',this);return false" data="'+escape(result.title || '')+'">Save to Drive</a>';
+						}else{
+							var s='['+(idx+1)+'/'+files.length+'] Can not find conversion result for this format ('+files[idx].format+')';
+						}						
+						s2+=' &nbsp;<a href="#" onclick="f_switchlog(4,_getid(\'alog4\'));return false" title="View this converted text">View Text</a>&nbsp;';
+						var link=result.alternateLink || result.webContentLink;
+						if(link) s2+=' &nbsp;<a href="'+link+'" target="_blank" title="View this document on the Google Drive">View Docs</a>';
+
+						if(result.labels && result.labels.trashed){
+							s2+=' &nbsp;<a href="'+gd_weburl()+'#trash" onclick="gd_clickweburl(this)" target="_blank" title="Show folder">Folder</a>';
+						}else if(result.parents && result.parents[0] && result.parents[0].id){
+							s2+=' &nbsp;<a href="'+gd_weburl()+'#folders/'+result.parents[0].id+'" onclick="gd_clickweburl(this)" target="_blank" title="Show folder">Folder</a>';
+						}
+						if(!nodel) s2+=' &nbsp;<a href="#" onclick="proc_delete(\''+result.id+'\',this);return false" data="'+escape(result.title2 || result.title || '')+'" title="Delete this temporary file">Delete temp file</a>';
+						s2+=' <== '+henc(files[idx].resp.title2 || files[idx].resp.title);
+						if(downloadurl){
+							proc_log('log1',s,'uploaded',s2);
+							//proc_log('log2',s,'uploaded',s2);
+						}else{
+							proc_log('log1',s,'error',s2);
+							_next();return;
+						}
+
+						files[idx].targetfolderid=targetfolderid2;
+						files[idx].downloadurl=downloadurl;
+						files[idx].resp2=result;
+								
+						f_download(function(result){
+							_progress2('Downloaded converted text.');
+							_next();
+						},xhr2,files,idx,xhr);
+						return;
+					}else{
+						//if(result.exportLinks) _progress('log1','Can not find conversion result for this format ('+files[idx].format+').','error');
+						_progress('log1','Conversion Error.','error');
+						_delete(result.id);
+					}
+				}
+				_next();
+			}
+
+		files[idx].targetfolderid='';//targetfolderid1;
+		files[idx].ocrlang=ocrlang;
+		if(files[idx].f || files[idx].clipboard){
+			f_upload(_upcallback,xhr,files,idx,true);
+		}else if(files[idx].resp){
+			if(files[idx].resp.exportLinks){
+				_progress2('Converting...');
+				_upcallback(files[idx].resp,true);
+			}else f_copy(_upcallback,xhr,files,idx);
+		}else{
+			_next();
+		}
+	}
+
+	get(0);
+  }
+}
+
+var g_canceled;
+function f_copy(callback,xhr,files,idx){
+	var cresp=files[idx].resp;
+
+	function _progress(s,nolog){
+		var s1='['+(idx+1)+'/'+files.length+'] '+s+' '+cresp.title;
+		if(!nolog) proc_log('log1',s1);
+		var a=_getid("gd_progress2");
+		if(a) a.innerHTML=henc(s1);
+	}
+	_progress('Copy & Converting...', true);
+
+	var body = {'title': cresp.title};
+	//if(files[idx].targetfolderid) body.parents=[{"id": files[idx].targetfolderid}];
+	body.parents=[{"id": "root"}];
+	body.labels={'trashed':true};
+	body.description=gdesc;
+	body.properties=[{"key":"temp", "value":gdesc, "visibility":"PRIVATE"}];
+	
+	var opt={'convert': true, 'ocr': true, 'fileId': cresp.id, 'resource': body};
+	if(files[idx].ocrlang) opt.ocrLanguage=files[idx].ocrlang;
+	var request = gapi.client.drive.files.copy(opt);	
+	request.execute(function(result){
+		callback(result);
+	});
+}
+function f_download(callback,xhr,files,idx,xhr2){
+	//delay
+	setTimeout(function(){
+		f_download2(callback,xhr,files,idx,xhr2,true);
+	},1200); 
+}
+function f_download2(callback,xhr,files,idx,xhr2,useretry,retrycount){
+	var accessToken = gapi.auth.getToken().access_token;
+	function _error(s){
+		var result={};
+		result.error={"message":s};
+		callback(result);
+	}
+	function _end(){
+		callback();
+	}
+	function _progress(s,nolog){
+		var s1='['+(idx+1)+'/'+files.length+'] '+s+' '+(files[idx].resp.title2 || files[idx].resp.title);
+		if(!nolog) proc_log('log1',s1);
+		var a=_getid("gd_progress2");
+		if(a) a.innerHTML=henc(s1);
+	}	
+	if(!retrycount) retrycount=0;
+	if(retrycount==0){
+		_progress('Downloading converted text...', true);
+	}
+
+		var downloadurl=files[idx].downloadurl;
+		if(!downloadurl){
+			_error('Error. Can not find a Download URL.');
+			return;
+		}
+
+		if(g_canceled){
+			_end();return;
+		}
+				try{					
+					gd_lastprogress=(new Date()).getTime();
+					if(files[idx].canceled)return;
+					var su=downloadurl;//+'&access_token='+encodeURIComponent(accessToken);
+					/*if(downloadurl.toLowerCase().indexOf('format=csv')>0){
+						su='https://speedtesting.herokuapp.com/proxyrss/geturl2.php?max=15&url='+encodeURIComponent(su);
+					}*/
+					xhr.open('GET', su);
+					//xhr.responseType = 'arraybuffer';
+					xhr.onprogress=function(event){
+						if(gd_lastprogress){
+							var elaspetime = new Date();
+							var dt=(elaspetime.getTime()-gd_lastprogress);
+							if(dt<500)return;
+							gd_lastprogress=elaspetime.getTime();
+						}
+						var a=event;
+						var total=a.totalSize || files[idx].resp.fileSize || 0;//a.total 
+						var current=a.position || a.loaded  || 0;
+						_progress('Downloading... ('+number_format(current)+'/'+number_format(total)+')', true);
+					};
+					xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+				    xhr.onload = function(){
+						if((this.status==404 || (this.status == 200 && files[idx].resp.mimeType=='application/vnd.google-apps.spreadsheet' && (this.response || '').length==0)) && useretry && retrycount<=2){
+							retrycount++; setTimeout(function(){f_download2(callback,xhr,files,idx,xhr2,true,retrycount);},1000);							
+							return;
+						}
+						if(this.status == 200){
+							var s=this.response || '';					
+							if(downloadurl.toLowerCase().indexOf('format=csv')>0 && s.length==0){
+								_error('This file is invalid file, or It exceeds the file size limt. The maximum download size is about 15 megabytes for google spreadsheet format.');
+								return;
+							}
+							_getid('log4').value=shortstring(s,1024*1024);
+							//if(s) f_switchlog(4,_getid('alog4'));
+							callback();
+						}else{
+							_error("Error (status) " + this.status + "("+this.statusText+") occurred while receiving the file.");
+						}						
+					};
+					xhr.onerror = function(e){      
+						if(e.target && e.target.status==404 && useretry && retrycount<=2){
+							retrycount++; setTimeout(function(){f_download2(callback,xhr,files,idx,xhr2,true,retrycount);},1000);
+							return;
+						}
+						_error("Error " + e.target.status + " occurred while receiving the file.");
+					};
+					xhr.send();
+				}catch(err){
+					_error(err+'\n\nor This browser does not support. Please upgrade your browser.');
+				}
+}
+function f_upload(callback,xhr,files,idx,isconvert,filedata){
+	var maxfilesize=1024*1024*50;	
+	var chunk=256*1024*2*10; //5M
+	var accessToken = gapi.auth.getToken().access_token;
+	var reader;
+	var cresp;
+	if(isconvert) cresp=files[idx].resp;
+	else cresp=files[idx].resp2;
+
+	function _error(s){
+		var result={};
+		result.error={"message":s};
+		callback(result);
+	}
+	function _end(){
+		callback();
+	}
+	function _progress(s,nolog){
+		var s1='['+(idx+1)+'/'+files.length+'] '+s+' '+(cresp.title2 || cresp.title);
+		if(!nolog) proc_log('log1',s1);
+		var a=_getid("gd_progress2");
+		if(a) a.innerHTML=henc(s1);
+	}
+	_progress('Uploading...', true);
+
+	//////filedata read	
+	function _getfiledata(start,chunk,response){	
+		if(!isconvert){
+			var s='';
+			var len = filedata.byteLength;
+			var end=start+chunk;
+			if(end>len) end=len;
+			for (var i = start; i < end; i++) {
+				s+=String.fromCharCode(filedata[i]);
+			}
+			response(s);
+			return;
+		}
+		if(files[idx].f.size>maxfilesize){
+			_error('Error. The maximum size for this task is '+(maxfilesize/1024/1024)+' M.');
+			return;
+		}
+		var usearray;
+		if(!reader) reader = new FileReader();
+		reader.onload = function(e) {
+			if(usearray){
+				var b=new Uint8Array(e.target.result);
+				var s='';
+				var len = b.byteLength;
+				for (var i = 0; i < len; i++) {
+					s+=String.fromCharCode(b[i]);
+				}
+				response(s);
+			}else{
+				response(e.target.result);
+			}
+		};
+		reader.onerror = function(){
+			_error('Read Error: '+files[idx].f.name);
+		};
+		var blob;
+		if(files[idx].f.slice) blob=files[idx].f.slice(start,chunk+start);
+		else if(files[idx].f.webkitSlice) blob=files[idx].f.webkitSlice(start,chunk+start);
+		else if(files[idx].f.mozSlice) blob=files[idx].f.mozSlice(start,chunk+start);		
+		if(!blob){
+			_error("Read Error: This browser does not support FileReader slice.");
+			return;
+		}
+		if(!reader.readAsBinaryString){
+			if(!reader.readAsArrayBuffer){
+				_error("Read Error: This browser does not support FileReader API.");
+				return;
+			}
+			usearray=true;
+			reader.readAsArrayBuffer(blob);
+		}else{
+			reader.readAsBinaryString(blob);
+		}
+	}
+	
+		//////upload
+function _upload(retry){
+	if(files[idx].canceled)return;
+	if(g_canceled){
+		_end();return;
+	}
+	
+	var len;
+	if(!isconvert) len=filedata.length;
+	else len=cresp.fileSize;
+
+	function _up(url, start){
+		gd_checklogin(function(){
+			accessToken=gapi.auth.getToken().access_token;
+			_up2(url, start);
+		});
+	}
+	function _up2(url, start){
+		var end=start+chunk;
+		if(end>len) end=len;
+
+	function _go(cfiledata){
+		//console.log(cfiledata.length);
+		if(g_canceled){
+			_end();return;
+		}
+		
+		if(files[idx].clipboard){
+			end=len;
+			var body=_getid('previewimg').src || '';
+			body=body.replace(/^data:image\/(png|jpg|jpeg|gif|bmp);base64,/, "");
+			if(!body){
+				_error('Chunk filedata read 0 byte.');				
+				return;
+			}		
+			var sizeratio=cresp.fileSize / body.length;
+		}else{
+			if(!cfiledata){
+				_error('Chunk filedata read 0 byte.');				
+				return;
+			}		
+			try{
+				var body=btoa(cfiledata);
+			}catch(err){
+				_error('Error. '+err);
+				return;
+			}
+			var sizeratio=cfiledata.length / body.length;
+		}
+		
+		if(start==0) gd_lastprogress=(new Date()).getTime();
+		
+		var method='PUT';
+		if(files[idx].canceled)return;
+		xhr.open(method, url);
+		xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+		xhr.setRequestHeader('Content-Range', 'bytes '+start+'-'+(end-1)+'/'+len);
+		xhr.setRequestHeader('Content-Encoding', 'base64');
+		if(xhr.upload){
+			xhr.upload.onprogress=function(event){
+				if(gd_lastprogress){
+					var elaspetime = new Date();
+					var dt=(elaspetime.getTime()-gd_lastprogress);
+					if(dt<300)return;
+					gd_lastprogress=elaspetime.getTime();
+				}
+				var a=event;
+				var total=a.totalSize || a.total || 0;
+				var current=a.position || a.loaded  || 0;
+				current=Math.floor(current*sizeratio)+start;				
+				var s1='Upload & Converting.. ('+number_format(current)+'/'+number_format(len)+')';
+				try{
+					var percentComplete = (current / len) * 100;
+					if(percentComplete>80){
+						s1='Converting.. ('+number_format(current)+'/'+number_format(len)+')';
+					}
+				}catch(err){}
+				_progress(s1, true);
+			};
+		}
+	    xhr.onload = function(){
+			//var status=xhr.getResponseHeader("status");
+			var range;
+			if(!this.response) range=xhr.getResponseHeader("range");
+			if(range){
+				var next=parseInt(range.split('-')[1]);
+				if(!next || isNaN(next)){
+					error('Results range value error');				
+				}else{
+					_up(url, next+1);
+				}
+				return;
+			}else{
+				var result;
+				try{
+					result=JSON.parse(this.response);
+				}catch(err){
+					result='';				
+				}
+				if(result){
+					callback(result);
+				}else{
+					_error('Results value error');				
+				}
+			}			
+		};
+		xhr.onerror = function(e){      
+			_error("Error " + e.target.status + " occurred while uploading the file.");
+		};
+		xhr.send(body); 	
+	}
+		
+		if(files[idx].clipboard){
+			_go();
+			return;
+		}
+		_getfiledata(start,chunk,function(s){
+			try{
+				_go(s);
+			}catch(err){
+				_error('Error. '+err);
+			}
+		});
+	}
+
+	try{
+		var method='POST';
+		var path='/upload/drive/v2/files';
+		var param='uploadType=resumable';
+		if(isconvert){
+			param+='&convert=true';
+			if(!retry){
+				param+='&ocr=true';
+				if(files[idx].ocrlang) param+='&ocrLanguage='+files[idx].ocrlang;
+			}
+		}
+		
+		if(!cresp.title) cresp.title='No Name';
+		if(!cresp.mimeType) cresp.mimeType=getmimetype(cresp.title2 || cresp.title) || 'application/octet-stream';		
+        var metadata = {
+            'title': cresp.title2 || cresp.title,
+            'mimeType': cresp.mimeType
+        };
+		if(files[idx].targetfolderid){ //save to drive
+			metadata.parents=[{"id": files[idx].targetfolderid}];			
+		}else{
+			metadata.parents=[{"id": "root"}];
+			metadata.labels={'trashed':true};
+			metadata.description=gdesc;
+			metadata.properties=[{"key":"temp", "value":gdesc, "visibility":"PRIVATE"}]; //PRIVATE and PUBLIC
+		}
+		//console.log(metadata);
+		
+		var body=JSON.stringify(metadata);
+		_progress('Request upload...',true);
+
+		if(files[idx].canceled)return;
+		if(xhr.upload) xhr.upload.onprogress=null;
+		xhr.open(method, 'https://www.googleapis.com'+path+'?'+param, true);
+		//xhr.open(method, 'https://content.googleapis.com'+path+'?'+param, true);
+		xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+		xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+		xhr.setRequestHeader('X-Upload-Content-Type', cresp.mimeType || 'application/octet-stream');
+		xhr.setRequestHeader('X-Upload-Content-Length', len);
+	    xhr.onload = function(){
+			var url=xhr.getResponseHeader("Location");
+			if(url){
+				_up(url, 0);
+			}else{
+				if(retry){
+					var s=this.response || '';
+					if(files[idx].targetfolderid && s.indexOf(files[idx].targetfolderid)>=0 && s.toLowerCase().indexOf("file not found")>=0) _error('Target folder for save does not seem to exist.');
+					else _error('Error. Can not find resumable upload URL.');
+				}else{
+					_upload(true);
+				}
+			}
+		};
+		xhr.onerror = function(e){      
+			var s="Error " + e.target.status + " occurred while uploading the file.";
+			_error(s);
+		};
+		xhr.send(body); 	
+	}catch(err){
+		_error(err+'\n\nor This browser does not support. Please upgrade your browser.');
+	}
+}
+//////upload
+	_upload();
+}
+
+var stempfoldername='Documents to Text Temporary';
+var sformats=[['pdf, jpg, jpeg, png, gif, bmp, doc, docx, ppt, pptx, odp, html, htm, txt, text, odt,',['txt'],'Documents','doc','vnd.google-apps.document']];
+
+var gfiles2;
+var gd_files_count=0;
+function handleFileSelect2(files){
+	if(!window.FileReader || !window.XMLHttpRequest){
+		alert("This browser does not support.");
+		return;
+	}
+	if(gd_isdownloading){
+		alert("It's working. Please try again in a few minutes. or Cancel the current job.");
+		return;
+	}
+	
+	if(files) gfiles2=files;
+	if(!gfiles2 || gfiles2.length==0) return;
+	
+	attach_clear();
+	var now=(new Date()).getTime();	
+	for(var i = 0, f; f = gfiles2[i]; i++){
+		var d={};
+		d.id=now+'_'+i;
+		d.f=f;
+		d.resp={};
+		d.resp.title=f.name;		
+		d.resp.fileSize=f.size;
+		d.resp.mimeType=getmimetype(f.name);
+		f_addtolist(d);
+		gd_files.push(d);		
+		break;
+	}	
+	gd_count();	
+}
+function f_addtolist(d){
+function getformat(){
+	var flag;
+	var s=d.resp.title;
+	var arr=(s || '').split(".");
+	var ext=arr[arr.length-1].toLowerCase()+',';
+	for(var i=0; i <= sformats.length-1; i++){
+		flag=false;
+		if(d.resp.exportLinks && d.resp.mimeType){
+			if(d.resp.mimeType.indexOf(sformats[i][4])>=0) flag=true;
+		}else{
+			if(sformats[i][0].indexOf(ext)>=0) flag=true;
+		}
+		if(flag){
+			var a=document.optcontainer['o_prefer_'+sformats[i][3]];
+			if(a && a.value) d.format=a.value;
+			else d.format=sformats[i][1][0];
+			d.formatidx=i;
+			return;
+		}
+	}
+	d.format='txt';
+	d.formatidx=0;
+}
+	getformat();
+	var a=_getid("attachment");
+	var c=document.createElement("option");
+	gd_files_count++;
+	d.idx=gd_files_count;
+	c.value=d.idx;
+	var s=d.format+' <== '+d.resp.title+' ('+getsize(d.resp.fileSize || 0)+')';			
+	c.appendChild(document.createTextNode(s));		 
+	a.appendChild(c);		
+}
+
+function proc_delete(fileid,f){
+	if(!fileid) return;
+	if(gd_isdownloading){
+		alert("Please try again in a few minutes. or Cancel the current job.");
+		return;
+	}	
+	var title=unescape(f.getAttribute("data") || '');
+	function _log(s){
+		var a=_getid('gd_progress2');
+		if(a) a.innerHTML=s;
+	}
+	_log('Deleting...');
+	var request = gapi.client.drive.files['delete']({
+		'fileId': fileid
+	});
+	request.execute(function(resp){
+		var s;
+		if(resp.result && !resp.message){
+			s='<font style="color:green">File deleted successfully. '+henc(title)+'</font>';
+			_log(s);
+		}else{
+			s='<font style="color:red">Delete failed. <b>'+resp.message+'</b> '+henc(title)+'</font>';
+			_log(s,'error');
+		}		
+	});
+}
+function proc_copyto(fileid,f){
+	if(!fileid) return;
+	if(gd_isdownloading){
+		alert("Please try again in a few minutes. or Cancel the current job.");
+		return;
+	}	
+
+	var id=getstorage('gd_folder_id') || '';
+	var name=getstorage('gd_folder_name') || 'Root Folder';
+	var answer=confirm("Target Folder to Save: "+name+"\n\nAre you sure?");			
+	if(!answer)return;
+
+	var title=unescape(f.getAttribute("data") || '');
+
+	proc_log('log1','Saving...','welcome');
+	var body = {'title':title};
+	if(id) body.parents=[{"id": id}];
+	body.labels={'trashed':false};
+	body.description='';
+	body.properties=[];
+
+	var request = gapi.client.drive.files.copy({
+		'fileId': fileid,
+		'resource': body
+	});
+	request.execute(function(result){
+		if(!result){
+			proc_log('log1','Error.','error');
+			return;
+		}
+		if(result.error){
+			var s='Error. ';
+			if(result.error.message) s+=result.error.message+' ';
+			if(result.error.code==401){
+				s+='Login or Authorize Error.';
+			}
+			if(id && s.indexOf(id)>=0 && s.toLowerCase().indexOf("file not found")>=0) s+=' Target folder for save does not seem to exist.';
+			proc_log('log1',s,'error');
+		}else if(result.id){
+			var s2='';
+			var link=result.alternateLink || result.webContentLink;
+			if(link) s2+='<a href="'+link+'" target="_blank" title="View this document">View</a>';
+			if(result.parents && result.parents[0] && result.parents[0].id){
+				s2+=' &nbsp;<a href="'+gd_weburl()+'#folders/'+result.parents[0].id+'" onclick="gd_clickweburl(this)" target="_blank" title="Show folder">Folder</a>';
+			}
+			s2+=' &nbsp;<a href="#" onclick="proc_delete(\''+result.id+'\',this);return false" data="'+escape(result.title || '')+'" title="Delete this file">Delete</a>';
+			s2+=' &nbsp;'+henc(title);
+			proc_log('log1','Saved successfully.','uploaded',s2);
+		}
+	});
+}
+function openWindow(url, name, w, h) {
+  //w=screen.width;
+  //h=screen.height;
+	w=parseInt(screen.availWidth-(screen.availWidth*0.1));
+	var diff=30;
+	h=parseInt(screen.availHeight-(screen.availHeight*0.1));
+	if(h+(diff*2)>screen.availHeight) {
+		h=screen.availHeight-(diff*2);
+	}
+  var winX = 0;
+  var winY = diff;
+  if (parseInt(navigator.appVersion) >= 4) {
+    winX = (screen.availWidth - w)*.5;
+    //winY = (screen.availHeight - h)*.5;
+  }
+  var features = 'width=' + w + ',height=' + h + ',left=' + winX + ',top=' + winY +', resizable=yes, scrollbars=yes';
+  var win=window.open(url, name, features);
+  if(win) win.focus();
+}
+function proc_trans(durl){
+	var accessToken = gapi.auth.getToken().access_token;
+	durl=durl+'&access_token='+encodeURIComponent(accessToken);	
+
+	var sl=_getid('sourcelang').value;
+	var tl=_getid('targetlang').value;
+	var hl=window.navigator.language || window.navigator.userLanguage || "en";
+	var s='https://translate.google.com/translate?hl='+hl+'&sl='+sl+'&tl='+tl+'&u='+encodeURIComponent(durl);
+	var name='';
+	if(_getid("c_opensame").checked) name='translatordrive_url';
+	openWindow(s,name);
+}
+function c_opensame_onclick(f){
+	if(f.checked) setstorage("c_opensame","1");
+	else setstorage("c_opensame","");
+}
+
+function attach_delete(){
+	if(gd_isdownloading)return;
+	function remove(idx){
+		for(var i = 0; i <= gd_files.length-1; i++){
+			if(gd_files[i].idx==idx){
+				gd_files.splice(i,1);
+				return;
+			}
+		}
+	}
+	var a=_getid("attachment");
+	var k=-1;
+	for(var i=a.options.length-1;i>=0;i--){
+		if(a.options[i].selected){
+			remove(a.options[i].value);
+			a.remove(i);
+			k=i;
+		}
+	}
+	if (k>a.options.length-1) k=a.options.length-1;
+	if (k>=0){
+		a.selectedIndex=k;
+	}
+	gd_count();	
+}
+function attach_clear(){
+	if(gd_isdownloading)return;
+	var a=_getid("attachment");
+	for(var i=a.options.length-1;i>=0;i--) a.remove(i);
+	gd_files=[];
+	gd_files_count=0;
+	gd_count();	
+}
+var gexportlist=[];
+function attachment_onchange(f){
+	_getid("spandown").innerHTML='';
+	function _down(resp){
+			var accessToken=gapi.auth.getToken().access_token;
+			if(resp.downloadUrl){
+				_getid("spandown").innerHTML='<a id="adownlink">Download this file</a>&nbsp; ('+getsize(resp.fileSize)+')';
+				var a=_getid("adownlink");
+				if(a){
+					a.href=resp.webContentLink || (resp.downloadUrl+'&access_token='+encodeURIComponent(accessToken));
+					a.download=resp.title;
+					a.title=resp.title;
+				}
+			}else if(resp.exportLinks){
+				gexportlist=[];
+				for (x in resp.exportLinks){
+					var a={};
+					a.title=resp.title;
+					a.name=x;
+					a.url=(resp.exportLinks[x] || '')+'&access_token='+encodeURIComponent(accessToken);
+					var match=a.url.match(/(exportFormat=|format=)(.*?)(&|$)/i);
+					if(match) a.ext=match[2];
+					gexportlist.push(a);
+				}
+				if(gexportlist.length==0) return;
+							var prefer=getstorage('c_prefer_ext');
+							s='<select id="adownsel" style="width:350px;margin-bottom:1px">';
+							for(var i = 0; i < gexportlist.length; i++){
+								s+='<option value="'+i+'"';
+								if(gexportlist[i].ext){
+									if(gexportlist[i].ext==prefer) s+=' selected';
+									s+='>(.'+gexportlist[i].ext+') ';
+								}else{
+									s+='>';
+								}
+								s+=gexportlist[i].name;
+							}		
+							s+='</select>&nbsp; <a id="adownlink" style="display:none">Download this file</a>';
+							_getid("spandown").innerHTML=s;
+							var a=_getid("adownsel");
+							if(a){
+								a.onchange=function(){
+									if(!this.value)return;
+									var d=gexportlist[this.value];
+									if(!d)return;
+									setstorage('c_prefer_ext',d.ext);
+									var a=_getid("adownlink");
+									if(a){
+										a.href=d.url;
+										var s=d.title || '';
+										if(d.ext) s+='.'+d.ext;
+										a.download=s;
+										a.title=s;
+										a.style.display='';
+									}
+								}
+								a.onchange();
+							}
+			}
+	}
+
+	function find(oidx){
+		var s,idx,s1;
+		for(var i = 0; i <= gd_files.length-1; i++){
+			if(gd_files[i].idx==oidx){
+				idx=gd_files[i].formatidx;
+				s='';
+				if(gd_files[i].f) s+='(Local) ';
+				else if(gd_files[i].clipboard) s+='(Clipboard) ';
+				else{
+					s+='(Drive) ';
+					_down(gd_files[i].resp);					
+				}
+				s1=henc(gd_files[i].resp.title);
+				var link=gd_files[i].resp.alternateLink || gd_files[i].resp.webContentLink;
+				if(link) s+='<a href="'+link+'" target="_blank" title="View this file">'+s1+'</a>';
+				else s+=s1;
+				s+=' ('+getsize(gd_files[i].resp.fileSize)+')';
+
+				_getid("desc").innerHTML=s;
+				return;
+			}
+		}
+	}
+	var a=_getid("attachment");
+	for(var i=a.options.length-1;i>=0;i--){
+		if(a.options[i].selected){
+			find(a.options[i].value);
+			break;
+		}
+	}
+}
+
+function gd_open_picker(kind){
+	if(!gd_useable())return;
+	gd_login(function(result){
+		if(!result) return;
+		gd_createpicker(kind);
+	},true);
+}
+
+function gd_getparam(s,name){
+	name=name+"=";
+	name=name.toLowerCase();
+	var p1=s.toLowerCase().indexOf(name);
+	if (p1<0) return "";
+	s=s.substr(p1+name.length);
+	var p2=s.toLowerCase().indexOf("&");
+	if (p2>=0) {
+		return s.substr(0,p2);
+	} else {
+		return s;
+	}
+}
+function gd_open_state(force){
+	var s=gd_state;
+	if(s){
+		if(!gd_issupported){
+			gd_state='';
+			alert("This browser does not support.");
+			return;
+		}
+		s=decodeURIComponent(s);
+		try{
+			var a=JSON.parse(s);
+			var ids=[];
+			function find(b){
+				if(!b)return;
+				for(var i=0; i <= b.length-1; i++){
+					if(b[i]){
+						var cc={};
+						cc.id=b[i];
+						ids.push(cc);
+					}
+				}
+			}
+			find(a.ids);
+			find(a.exportIds);
+			if(ids.length>0){
+				gd_login(function(result){
+					if(gd_open2 && !force)return;
+					gd_open2=true;          
+					if(!result)return;				
+					//_getid('gd_btn_reopen').style.display='';
+					gd_state='';
+					gd_loadfiles(ids,true);
+				});				
+			}
+		}catch(err){
+		}
+	}
+}
+function gd_clientload(){
+	gd_loaded=true;
+	if (window.addEventListener){
+		window.addEventListener("resize", gd_btn_login2, false);
+	}else if (window.attachEvent){
+		window.attachEvent("onresize", gd_btn_login2);
+	}
+	gd_open_state();
+}
+var gd_open2;
+function gd_open_state2(){
+	setTimeout(function(){
+		if(!gd_open2)gd_open_state();
+	}, 1000);
+}
+
+function gd_loadscript(callback){
+	function inject(s){
+		var o = document.createElement('scri' + 'pt');
+		o.setAttribute('src', s);
+		o.setAttribute('type', 'text/javascript');
+		document.body.appendChild(o);
+	}
+	if(gd_load_timer)return;
+	if(gd_loaded && gd_pickerloaded)return;
+	gd_load_timer=setInterval(function(){
+		if(gd_loaded && gd_pickerloaded){
+			clearInterval(gd_load_timer);
+			if(callback) callback();
+		}
+	},100);
+	inject('https://apis.google.com/js/client.js?onload=gd_clientload');
+	inject('https://apis.google.com/js/api.js?onload=gd_loadpicker');	
+}
+function gd_dblclick(){
+	function dblclick(){
+		try{
+			if(gd_picker)gd_picker.setVisible(false);
+          		if(gd_picker2)gd_picker2.setVisible(false);
+		}catch(err){}
+	}
+	function keydown(e){
+		if(!e)e=window.event;
+		if(e && e.keyCode==27) dblclick();
+	}
+	if(window.addEventListener){
+		document.addEventListener("dblclick", dblclick, false);
+		document.addEventListener("keydown", keydown, false);
+	}else if(window.attachEvent){
+		document.attachEvent("ondblclick", dblclick);
+		document.attachEvent("onkeydown", keydown);
+	}
+}
+var gd_userId,gd_email;
+function gd_weburl(){
+	var s;
+	if(gd_email) s='https://drive.google.com/?authuser='+encodeURIComponent(gd_email);
+	else s='https://drive.google.com/';
+	return s;
+}
+function gd_clickweburl(f){
+	var s=f.href || '';
+	var p1=s.indexOf('#');
+	if(p1<0) s='';
+	else s=s.substr(p1,s.length);
+	f.href=gd_weburl()+s;
+}
+function gd_info(){
+	if(gd_email)return;
+	gapi.client.load('drive', 'v2', function(){
+		var request = gapi.client.drive.about.get();
+		request.execute(function(resp) {
+			if(resp && resp.user){
+				if(gd_email)return;
+				gd_email=resp.user.emailAddress;
+				if(gd_email){
+					var a=_getid('btn_open');
+					var b=_getid('gd_btn_reopen');
+					if(a)a.title=a.title+' ('+gd_email+')';
+					if(b)b.title=b.title+' ('+gd_email+')';
+				}				
+			}
+		});
+	});
+}  
+function gd_init(){
+	gd_state=gd_getparam(location.href,'state');
+	if(gd_state) gd_state=decodeURIComponent(gd_state);
+
+	gd_dblclick();
+	gd_state2=gd_state;
+	if(!window.XMLHttpRequest || !window.FileReader ){
+	}else{
+		gd_issupported=true;
+		if(gd_state){
+			try{
+				var a=JSON.parse(gd_state);
+				gd_userId=a.userId;              
+				if(a.ids || a.exportIds){
+					_getid("downlink").innerHTML="<table><tr><td><div id='gd_progress'>Ready...</div></table>";
+				}
+			}catch(err){}			
+			if(window.addEventListener) window.addEventListener("load", gd_open_state2, false);
+			else if (window.attachEvent) window.attachEvent("onload", gd_open_state2);          
+		}
+		gd_loadscript();
+	}
+}
+gd_init();
+
+function proc_setfolder(id,name,kind){
+	var s;
+	if(id){
+		s=gd_weburl()+'#folders/'+id;
+	}else{
+		s=gd_weburl();
+		name='Root Folder';
+	}
+	s='<a href="'+s+'" target="_blank" onclick="gd_clickweburl(this)" title="Show Folder">'+henc(name)+'</a>';
+	if(!kind || kind==2){
+		_getid("foldername2").innerHTML=s;		
+		setstorage('gd_folder_id',id);
+		setstorage('gd_folder_name', name);
+	}
+}
+
+function init_load(){
+	var s='';
+	var s1;
+	for(var i=0; i <= sformats.length-1; i++){
+		s1=sformats[i][0];
+		if(!s1)continue;
+		s1=s1.substr(0,s1.length-1);
+		s+=sformats[i][2]+' ('+s1+')';
+		s+=' ==> <select name="o_prefer_'+sformats[i][3]+'">';
+		for(var j=0; j <= sformats[i][1].length-1; j++){
+			s+='<option value="'+sformats[i][1][j]+'">'+sformats[i][1][j].toUpperCase();
+		}
+		s+='</select><br>';
+	}	
+	_getid('psformats').innerHTML=s;
+
+	var id=getstorage('gd_folder_id') || '';
+	var name=getstorage('gd_folder_name') || 'Root Folder';
+	proc_setfolder(id, name);
+
+	//proc_displayhistory();
+	proc_loadopt();
+
+	function _fileload(e){
+		if(!e || !e.target){
+			alert("This browser does not support.");
+			return;
+		}
+		handleFileSelect2(e.target.files);
+	}
+	_getid('fileload2').onchange=_fileload;
+	
+	function _ondragover(e){
+		this.className = 'hover'; 
+		try{var ua=navigator.userAgent;
+			if(ua && ua.indexOf("Chrome")>=0){					
+				if(e.originalEvent) e = e.originalEvent;
+				if(e.dataTransfer){
+					var b = e.dataTransfer.effectAllowed;
+					e.dataTransfer.dropEffect = ('move' === b || 'linkMove' === b) ? 'move' : 'copy';
+				}
+			}
+		}catch(err){}
+		return false; 
+	}
+	function _ondragend(){
+		this.className = ''; return false;
+	}
+	function _ondrop(e){
+		this.className = '';
+		e.preventDefault();				
+		handleFileSelect2(e.dataTransfer.files);
+		_getid("holder2").className = '';
+		return false;
+	}
+
+	var holder = _getid('holder2');
+	holder.ondragover = _ondragover;
+	holder.ondragend = _ondragend;
+	holder.ondrop = _ondrop;
+
+	var a={};
+	for(var i=0; i <= sformats.length-1; i++){
+		for(var j=0; j <= sformats[i][1].length-1; j++){
+			if(!a[sformats[i][1][j]]) a[sformats[i][1][j]]=true;
+		}
+	}
+
+	init_trans();
+	init_clipboard();
+	var a=_getid('log5');
+	a.style.width=_getid('log1').offsetWidth+'px';
+
+	if(navigator.userAgent && navigator.userAgent.toLowerCase().indexOf("windows")>=0){
+		var a=_getid('fileload2');
+		a.setAttribute("accept",".pdf, .jpg, .jpeg, .png, .gif, .bmp, .doc, .docx, .ppt, .pptx, .odp, .html, .htm, .txt, .text, .odt");
+	}
+}
+init_load();
+
+var cropapi;
+var overlaypos=null;
+function proc_crop(){
+	var gd_window=_getid('gd_window');
+	var previewimg=_getid('previewimg');
+	var srcimg=_getid('srcimg');	
+	if(!previewimg.src){
+		alert('No image. First copy from the clipboard.');
+		return;
+	}
+	if(!srcimg){
+		gd_window.innerHTML='<table><tr><td><button id="crop_close">Close</button> <button id="crop_ok">Crop Image</button><tr><td><div id="SS_Overlay" style="z-index:5000;overflow:hidden;width:200px;"><img id="srcimg"></div></table>';
+		srcimg=_getid('srcimg');
+	}
+	if(!srcimg)return;
+	if(gd_window.style.display!='none'){
+		srcimg.src=''; gd_window.style.display='none';
+		setTimeout(proc_crop, 500);
+		return;
+	}
+
+	var orgw, orgh, w, h;
+	function go(){
+		if (cropapi) {
+			cropapi.destroy();	
+			cropapi=null;
+			overlaypos=null;
+		}
+		cropapi = $.Jcrop('#srcimg',{
+			setSelect: [ 0, 0, 100, 100 ],
+			boxWidth: w,
+			boxHeight: h,
+			keySupport: false,
+			drawBorders: true,
+			onSelect: function(c){
+				if (c.w == 0 && c.h == 0) overlaypos=null;
+				else overlaypos=c;
+			},
+			onChange: function(c){
+				if (c.w == 0 && c.h == 0) overlaypos=null;
+			}
+		});
+		gd_btn_login2();
+	}
+
+	srcimg.onload=function(){
+		this.onload=null;
+
+		var ww=getWindowWidth();
+		ww=Math.floor(ww-(ww*0.1));
+		var wh=getWindowHeight();
+		wh=Math.floor(wh-Math.max(wh*0.1,100));		
+		orgw=this.width;
+		orgh=this.height; 
+		w=orgw;
+		h=orgh;
+		if(w>ww){
+			w=ww;
+			h=Math.floor(w*orgh/orgw);
+		}
+		if(h>wh){
+			h=wh;
+			w=Math.floor(h*orgw/orgh);
+		}
+		
+		_getid("SS_Overlay").style.width=w+"px";
+		gd_window.style.top='-100000px';
+		gd_window.style.backgroundColor='white';
+		gd_window.style.display='';
+		setTimeout(go,100);
+	}
+	srcimg.src=previewimg.src;
+
+	var a=_getid('crop_close');
+	if(a){
+		a.onclick=function(){
+			srcimg.src=''; gd_window.style.display='none';
+		}
+	}
+	var a=_getid('crop_ok');
+	if(a){
+		a.onclick=function(){
+			if(!overlaypos){
+				alert('No selected image');
+				return;
+			}
+			var c=overlaypos;
+			var canvas=document.createElement("canvas");
+			canvas.width = c.w;
+			canvas.height = c.h;
+			var context = canvas.getContext('2d');
+			var overlayImage = _getid("srcimg");				
+			context.drawImage(overlayImage, c.x, c.y, c.w, c.h, 0, 0, c.w, c.h);				
+			var s1=canvas.toDataURL("image/png");
+			var blob=b64toBlob(s1.substr(s1.indexOf(",")+1,s1.length), 'image/png');	
+			if(g_paste_createImage) g_paste_createImage(s1, blob.size);
+			srcimg.src=''; gd_window.style.display='none';
+		}
+	}
+}
+</script>
+
+</body>
+</html>
