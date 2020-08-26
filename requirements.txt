@@ -1,2 +1,0 @@
-cherrypy==3.2.4
-dnspython==1.12.0
